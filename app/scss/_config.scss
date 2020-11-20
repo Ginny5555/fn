@@ -89,6 +89,7 @@ $gutter: $grid-gutter-width;
   }
   .dropdown {
     display: block !important;
+    margin-bottom: 5%;
   }
 
   hr {
@@ -189,10 +190,11 @@ body {
   h1 {
     color: $textcolor2;
     margin-top: 5%;
-
+    height: auto;
     font-size: 50px;
   }
   h2 {
+    height: auto;
     margin-top: 5%;
     color: $textcolor2;
     font-size: 25px;
