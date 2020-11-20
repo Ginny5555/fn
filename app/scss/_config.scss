@@ -1,0 +1,226 @@
+// USER VARIABLES SECTION
+
+$accent: #ffb039; // Accent Color
+$fontsize: 18px; // Body Font Size
+$textcolor: #1c3a74;
+$textcolor2: #fff; // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+$roboto: Roboto, sans-serif; // Roboto Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 20px;
+$gutter: $grid-gutter-width;
+
+// IMPORT SECTION
+
+@import "node_modules/bootstrap/scss/bootstrap-reboot.scss"; // Bootstrap Reboot collection
+@import "node_modules/bootstrap/scss/mixins/_breakpoints.scss"; // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss'; // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss'; // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flex {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin font($fname, $fstyle, $fweight, $furl) {
+  @font-face {
+    font-family: $fname;
+    font-style: $fstyle;
+    font-weight: $fweight;
+    // font-display: swap; // Uncomment to initially display system fonts
+    src: local($fname), url($furl) format("woff2");
+  }
+}
+
+@include font("Roboto", normal, 400, "../fonts/roboto-regular-webfont.woff2");
+@include font("Roboto", italic, 400, "../fonts/roboto-italic-webfont.woff2");
+@include font("Roboto", normal, 700, "../fonts/roboto-bold-webfont.woff2");
+@include font(
+  "Roboto",
+  italic,
+  700,
+  "../fonts/roboto-bolditalic-webfont.woff2"
+);
+
+@media (max-width: 576px) {
+  body {
+    width: 900px;
+    & p {
+      font-size: 18px;
+    }
+    & h1 {
+      font-size: 45px !important;
+    }
+    .comunity {
+      height: fit-content !important;
+    }
+  }
+}
+
+// Средние девайсы («таблетки», >= 768px)
+@media (max-width: 768px) {
+  & p {
+    font-size: 18px !important;
+  }
+  .comunity {
+    height: fit-content !important;
+  }
+  body {
+    top: 3%;
+  }
+  .orange {
+    color: $accent !important;
+  }
+  h3 {
+    font-size: 16px !important;
+  }
+  h2 {
+    font-size: 18px !important;
+  }
+  h1 {
+    font-size: 22px !important;
+  }
+  .dropdown {
+    display: block !important;
+  }
+
+  hr {
+    display: none;
+  }
+  .comunity-b {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .data__box {
+    flex-wrap: wrap !important;
+    height: 100% !important;
+  }
+  .data__time {
+    width: 100% !important;
+  }
+
+  body {
+    width: 100%;
+    & p {
+      font-size: 14px !important;
+    }
+  }
+  .data__box-d {
+    width: 100% !important;
+    height: fit-content !important;
+  }
+  .btn {
+    font-size: 20px;
+  }
+  .education {
+    height: 30% !important;
+    & h2 {
+      width: fit-content;
+    }
+  }
+  .main-menu .menu-link {
+    display: none;
+  }
+  .news-form {
+    width: 80% !important;
+    margin: 0 auto;
+  }
+}
+
+// Большие девайсы (десктопы, >= 992px)
+
+// Экстрабольшие девайсы (большие десктопы, >= 1200px)
+
+@media (min-width: 1500px) {
+  body {
+    width: 2000px;
+    & p {
+      font-size: 20px;
+    }
+    & h1 {
+      font-size: 50px !important;
+    }
+  }
+  .data__box-d {
+    height: 400px !important;
+    & .mg {
+      height: 60px !important;
+      width: 70px !important;
+    }
+  }
+}
+// GENERAL DOCUMENT STYLES
+
+::placeholder {
+  color: #666;
+}
+
+::selection {
+  background-color: $accent;
+  color: #fff;
+}
+
+input,
+textarea {
+  outline: none;
+  &:focus:required:invalid {
+    border-color: red;
+  }
+  &:required:valid {
+    border-color: green;
+  }
+}
+
+body {
+  font-family: $roboto;
+  font-size: $fontsize;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  overflow-x: hidden;
+  color: $textcolor;
+  h1 {
+    color: $textcolor2;
+    margin-top: 5%;
+
+    font-size: 50px;
+  }
+  h2 {
+    margin-top: 5%;
+    color: $textcolor2;
+    font-size: 25px;
+  }
+  h3 {
+    margin-top: 5%;
+    height: 10%;
+    font-size: 20px;
+  }
+  h4 {
+    height: auto;
+    font-size: 23px;
+    font-weight: 600;
+    color: $textcolor !important;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+      color: black;
+    }
+    p {
+      z-index: 2000;
+      font-size: $fontsize;
+      color: black;
+    }
+  }
+  hr {
+    width: 20%;
+    border-bottom: 2px solid $accent;
+  }
+}
