@@ -55,9 +55,7 @@ $gutter: $grid-gutter-width;
     & p {
       font-size: 18px;
     }
-    & h1 {
-      font-size: 45px !important;
-    }
+
     .comunity {
       height: fit-content !important;
     }
@@ -83,6 +81,9 @@ $gutter: $grid-gutter-width;
     font-size: 18px !important;
   }
   h1 {
+    font-size: 22px !important;
+  }
+  .ar {
     font-size: 22px !important;
   }
   .dropdown {
@@ -189,7 +190,7 @@ body {
     color: $textcolor2;
     margin-top: 5%;
     height: auto;
-    font-size: 50px;
+    font-size: 35px;
   }
   h2 {
     height: auto;
